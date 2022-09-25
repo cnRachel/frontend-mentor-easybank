@@ -1,12 +1,18 @@
 .feature {
     &__grid {
 
-        @include breakpoint_up(large) {
+        @include breakpoint_up(medium) {
             display: flex;
+            flex-wrap: wrap;
         }
     }
 
     &__item {
+        padding: 0.9375rem;
+
+        @include breakpoint-up(medium) {
+            flex: 0 0 50%;
+        }
         @include breakpoint_up(large) {
             flex: 1;
         }
