@@ -92,5 +92,10 @@
 }
 
 .overlay {
-    
+    position: fixed;
+    top: 3.75rem;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-image: linear-gradient($darkBlue, transparent);
 }
