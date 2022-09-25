@@ -3,7 +3,7 @@
     // Hamburger Open Styles
     &.open {
 
-        .header__menu {
+        .header__toggle {
             > span:first-child {
                 transform: rotate(45deg);
             }
@@ -20,6 +20,7 @@
     }
 
     .overlay {
+        opacity: 0;
         position: fixed;
         top: 3.75rem;
         right: 0px;
@@ -40,7 +41,7 @@
         }
     }
 
-    &__menu { // Mobile Menu
+    &__toggle { // Mobile Menu Toggle
 
         > span {
             display: block;
@@ -56,6 +57,13 @@
         }
 
 
+    }
+
+    &__menu {
+        background: $white;
+        a {
+            color: $darkBlue;
+        }
     }
 
     &__links {
