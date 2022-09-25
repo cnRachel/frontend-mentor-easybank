@@ -1,8 +1,14 @@
 .hero {
-    @include breakpoint-up(large) {
-        display: flex;
-        align-items: center;
+
+    background-color: $veryLightGray;
+
+    .container {
+        @include breakpoint-up(large) {
+            display: flex;
+            align-items: center;
+        }
     }
+    
 
     &__image {
         position: relative;
@@ -16,19 +22,49 @@
             flex: 3;
             order: 2;
             min-height: 41rem;
-            background-image: url('/images/bg-intro-desktop.svg');
-            background-position: left center;
+            background-image: none;
+            //background-image: url('/images/bg-intro-desktop.svg');
+            //background-position: left center;
         }
+
 
         &::before {
             content: "";
             position: absolute;
             height: 100%;
             width: 100%;
-            background-image: url('/images/image-mockups.png');
+            background-image: url('/images/bg-intro-desktop.svg');
             background-size: 93%;
             background-repeat: no-repeat;
             background-position: center bottom;
+            
+            
+            @include breakpoint-up(large) {
+                width: 150%;
+                background-size: 122%;
+                background-position: 0% 83%;
+            }
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-size: 93%;
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            background-image: url('/images/image-mockups.png');
+
+            @include breakpoint-up(large) {
+                width: 120%;
+                height: 122%;
+                background-image: url('/images/image-mockups.png');
+                background-size: 94%;
+                background-repeat: no-repeat;
+                background-position: center 150%;
+                left: 22%;
+            }
         }
     }
 
@@ -38,6 +74,7 @@
         @include breakpoint-up(large) {
             flex: 2;
             order: 1;
+            text-align: left;
         }
 
         h1 {
@@ -46,7 +83,13 @@
             line-height: 1.15;
             color: $darkBlue;
             margin-bottom: 1.5rem;
+
+            @include breakpoint-up(large) {
+                font-size: $font-xlg;
+            }
         }
+
+        
 
         p {
             line-height: 1.5;
